@@ -25,3 +25,10 @@ func Hex(h string) string {
 
 	return fmt.Sprintf("\033[38;2;%d;%d;%dm", r, g, b)
 }
+
+func RGB(r, g, b int) string {
+	if (r < 0 || g < 0 || b < 0) || (r > 255 || g > 255 || b > 255) {
+		return ""
+	}
+	return fmt.Sprintf("\033[38;2;%d;%d;%dm", r, g, b)
+}
