@@ -1,4 +1,4 @@
-package color
+package hex
 
 import "testing"
 
@@ -27,7 +27,7 @@ func TestIsHex(t *testing.T) {
 
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
-			if got := IsHex(test.input); got != test.want {
+			if got := isHex(test.input); got != test.want {
 				t.Fatalf("got=%t, but want=%t", got, test.want)
 			}
 		})

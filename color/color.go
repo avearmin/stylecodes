@@ -2,7 +2,7 @@ package color
 
 import (
 	"fmt"
-	"strconv"
+	"github.com/avearmin/stylecodes/internal/hex"
 )
 
 const (
@@ -17,44 +17,8 @@ const (
 	End     = "\033[39m"
 )
 
-func IsHex(hex string) bool {
-	if len(hex) != 7 {
-		return false
-	}
-	if hex[0] != '#' {
-		return false
-	}
-
-	hex = hex[1:]
-
-	for i := 0; i < len(hex); i++ {
-		if !isSupportedChar(hex[i]) {
-			return false
-		}
-	}
-
-	return true
-}
-func isSupportedChar(b byte) bool {
-	return ('A' <= b && b <= 'F') || ('a' <= b && b <= 'f') || ('0' <= b && b <= '9')
-}
-
-func Hex(hex string) string {
-	if !IsHex(hex) {
-		return ""
-	}
-
-	hex = hex[1:]
-
-	r, err := strconv.ParseInt(hex[0:2], 16, 64)
-	if err != nil {
-		return ""
-	}
-	g, err := strconv.ParseInt(hex[2:4], 16, 64)
-	if err != nil {
-		return ""
-	}
-	b, err := strconv.ParseInt(hex[4:6], 16, 64)
+func Hex(h string) string {
+	r, g, b, err := hex.ToRGB(h)
 	if err != nil {
 		return ""
 	}
