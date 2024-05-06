@@ -32,3 +32,10 @@ func RGB(r, g, b int) string {
 	}
 	return fmt.Sprintf("\033[38;2;%d;%d;%dm", r, g, b)
 }
+
+func Ansi256(n int) string {
+	if n < 0 || n > 255 {
+		return ""
+	}
+	return fmt.Sprintf("\033[38;5;%dm", n)
+}
