@@ -14,7 +14,17 @@ const (
 	Magenta = "\033[45m"
 	Cyan    = "\033[46m"
 	White   = "\033[47m"
-	End     = "\033[49m"
+
+	BrightBlack   = "\033[100m"
+	BrightRed     = "\033[101m"
+	BrightGreen   = "\033[102m"
+	BrightYellow  = "\033[103m"
+	BrightBlue    = "\033[104m"
+	BrightMagenta = "\033[105m"
+	BrightCyan    = "\033[106m"
+	BrightWhite   = "\033[107m"
+
+	End = "\033[49m"
 )
 
 func Hex(h string) string {
