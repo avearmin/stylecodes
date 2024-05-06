@@ -1,5 +1,10 @@
 package bgcolor
 
+import (
+	"fmt"
+	"github.com/avearmin/stylecodes/internal/hex"
+)
+
 const (
 	Black   = "\033[40m"
 	Red     = "\033[41m"
@@ -11,3 +16,12 @@ const (
 	White   = "\033[47m"
 	End     = "\033[49m"
 )
+
+func Hex(h string) string {
+	r, g, b, err := hex.ToRGB(h)
+	if err != nil {
+		return ""
+	}
+
+	return fmt.Sprintf("\033[48;2;%d;%d;%dm", r, g, b)
+}
