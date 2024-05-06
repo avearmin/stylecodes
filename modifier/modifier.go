@@ -13,5 +13,5 @@ var (
 	Inverse       = modifier{Start: "\033[7m", End: "\033[27m"}
 	Hidden        = modifier{Start: "\033[8m", End: "\033[28m"}
 	Strikethrough = modifier{Start: "\033[9m", End: "\033[29m"}
-	ResetAll      = "\033[0m"
+	End           = "\033[0m"
 )
