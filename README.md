@@ -4,6 +4,8 @@ higher-level styling libraries, stylecodes focuses on a lower-level interface, g
 understand and explicitly work with ANSI escape codes, which affect the entire terminal and not just a single line of 
 text.
 
+<img src="img/stylecodes.png" alt="stylecodes in terminal">
+
 ## Why stylecodes?
 While there are many libraries that provide terminal styling, they often abstract away the underlying ANSI escape codes, 
 leaving developers unaware of their broader impact on the terminal. `stylecodes` provides:
