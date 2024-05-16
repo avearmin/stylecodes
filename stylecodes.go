@@ -9,5 +9,20 @@ const (
 )
 
 func Style(text string, codes ...string) string {
-	return strings.Join(codes, "") + text + EndAll
+	lines := strings.Split(text, "\n")
+	
+	var codeStr strings.Builder
+	for _, v := range codes {
+		codeStr.WriteString(v)
+	}
+
+	var builder strings.Builder
+	for i, v := range lines {
+		builder.WriteString(codeStr.String() + v + EndAll)
+		if i != len(lines) - 1 {
+			builder.WriteString("\n")
+		}
+	}
+
+	return builder.String()
 }

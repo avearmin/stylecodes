@@ -1,7 +1,6 @@
 package box
 
 import (
-	"fmt"
 	"regexp"
 	"strings"
 )
@@ -22,7 +21,6 @@ func Border(text, style string) string {
 	
 	maxLen := 0
 	for _, v := range lines {
-		fmt.Println(stripANSI(v))
 		if maxLen < len([]rune(stripANSI(v))) {
 			maxLen = len([]rune(stripANSI(v))) 
 		}
