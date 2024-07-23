@@ -10,23 +10,23 @@ func TestStripANSI(t *testing.T) {
 		want  string
 	}{
 		"strip color": {
-			input: Color.Red + "foo" + Color.Reset,
+			input: ColorRed + "foo" + ResetColor,
 			want:  "foo",
 		},
 		"strip bgcolor": {
-			input: BgColor.Red + "foo" + BgColor.Reset,
+			input: BgColorRed + "foo" + ResetBgColor,
 			want:  "foo",
 		},
 		"strip modifier": {
-			input: Modifier.Underline + "foo" + Modifier.ResetUnderline,
+			input: Underline + "foo" + ResetUnderline,
 			want:  "foo",
 		},
 		"strip hex": {
-			input: Color.Hex("#ffffff") + "foo" + Color.Reset,
+			input: ColorHex("#ffffff") + "foo" + ResetColor,
 			want:  "foo",
 		},
 		"strip Ansi256": {
-			input: BgColor.Ansi256(26) + "foo" + BgColor.Reset,
+			input: BgColorAnsi256(26) + "foo" + ResetBgColor,
 			want:  "foo",
 		},
 	}
