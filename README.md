@@ -116,3 +116,7 @@ func main() {
     fmt.Println(codes.Style("Hello from Style() with Hex color", codes.ColorHex("#ff5733")))
 }
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
