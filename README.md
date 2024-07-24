@@ -35,8 +35,9 @@ import (
 )
 
 func main() {
-    fmt.Println(codes.Color.Red + "This is red text" + codes.Color.Reset)
+    fmt.Println(codes.ColorRed + "This is red text" + codes.ResetColor)
 }
+
 ```
 
 ### Using Multiple Styles
@@ -45,14 +46,14 @@ func main() {
 package main
 
 import (
-	"fmt"
-	codes "github.com/avearmin/stylecodes"
+    "fmt"
+    codes "github.com/avearmin/stylecodes"
 )
 
 func main() {
-	fmt.Println(
-		codes.Color.Black + codes.BgColor.BrightRed + codes.Modifier.Bold + codes.Modifier.Underline + "This is important" + codes.ResetAll
-	)
+    fmt.Println(
+        codes.ColorBlack + codes.BgColorBrightRed + codes.Bold + codes.Underline + "This is important" + codes.ResetAll
+    )
 }
 ```
 
@@ -62,13 +63,13 @@ func main() {
 package main
 
 import (
-	"fmt"
-	codes "github.com/avearmin/stylecodes"
+    "fmt"
+    codes "github.com/avearmin/stylecodes"
 )
 
 func main() {
-	fmt.Println(codes.Color.Red + codes.Modifier.Bold + codes.Modifier.Underline + "This is red, bold, and underlined" + codes.Color.Reset + codes.Modifier.ResetBold)
-	fmt.Println("but this is just underlined" + codes.Modifier.ResetUnderline)
+    fmt.Println(codes.ColorRed + codes.Bold + codes.Underline + "This is red, bold, and underlined" + codes.ResetColor + codes.ResetBold)
+    fmt.Println("but this is just underlined" + codes.ResetUnderline)
 }
 ```
 
@@ -83,7 +84,7 @@ import (
 )
 
 func main() {
-    result := codes.Style("This is important!", codes.Color.Black, codes.BgColor.BrightRed, codes.Modifier.Bold, codes.Modifier.Underline)
+    result := codes.Style("This is important!", codes.ColorBlack, codes.BgColorBrightRed, codes.Bold, codes.Underline)
     fmt.Println(result)
 }
 ```
@@ -94,24 +95,24 @@ func main() {
 package main
 
 import (
-		"fmt"
-		codes "github.com/avearmin/stylecodes"
+    "fmt"
+    codes "github.com/avearmin/stylecodes"
 )
 
 func main() {
     // Using Hex color
-    fmt.Println(codes.Color.Hex("#ff5733") + "Hello in Hex Color" + cdoes.Color.Reset)
+    fmt.Println(codes.ColorHex("#ff5733") + "Hello in Hex Color" + codes.ResetColor)
 
     // Using RGB color
-    fmt.Println(codes.Color.RGB(128, 0, 128) + "Hello in RGB Color" + codes.Color.Reset)
+    fmt.Println(codes.ColorRGB(128, 0, 128) + "Hello in RGB Color" + codes.ResetColor)
 
     // Using ANSI 256-Color mode
-    fmt.Println(codes.Color.Ansi256(34) + "Hello in ANSI 256-Color" + codes.Color.Reset)
+    fmt.Println(codes.ColorAnsi256(34) + "Hello in ANSI 256-Color" + codes.ResetColor)
 
     // Using Hex color for background
-    fmt.Println(codes.BgColor.Hex("#87ceeb") + "Hello with Hex Background" + codes.BgColor.Reset)
+    fmt.Println(codes.BgColorHex("#87ceeb") + "Hello with Hex Background" + codes.ResetBgColor)
 
-	// Using the Style function
-	fmt.Println(codes.Style("Hello from Style() with Hex color", codes.Color.Hex("#ff5733")))
+    // Using the Style function
+    fmt.Println(codes.Style("Hello from Style() with Hex color", codes.ColorHex("#ff5733")))
 }
 ```
